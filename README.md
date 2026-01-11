@@ -18,8 +18,8 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 - Implemented Core, Distribution, and Access layers to ensure scalability and fault isolation.
 
 **Redundancy & High Availability:**
-  - **EtherChannel (LACP):** Bundled links between Core and Distribution switches for increased bandwidth and failover.
-  - **HSRP/VRRP:**  Configured First Hop Redundancy Protocols for gateway redundancy at the Distribution layer.
+  - [**EtherChannel (LACP):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/01_Redundancy_HA/Etherchannel.md) Bundled links between Core and Distribution switches for increased bandwidth and failover.
+  - **HSRP:**  Configured First Hop Redundancy Protocols for gateway redundancy at the Distribution layer.
   - **RapidPVST:** Rapid Per Vlan Spanning Tree tuning to prevent loops while maintaining redundant paths.
 
 **Routing & Switching:**
