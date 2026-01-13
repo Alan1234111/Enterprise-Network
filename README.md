@@ -19,13 +19,13 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 
 **Redundancy & High Availability:**
   - [**EtherChannel (LACP):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/01_Redundancy_HA/Etherchannel.md) Bundled links between Core and Distribution switches for increased bandwidth and failover.
-  - **HSRP:**  Configured First Hop Redundancy Protocols for gateway redundancy at the Distribution layer.
-  - **RapidPVST:** Rapid Per Vlan Spanning Tree tuning to prevent loops while maintaining redundant paths.
+  - [**HSRP:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/01_Redundancy_HA/HSRP.md)  Configured First Hop Redundancy Protocols for gateway redundancy at the Distribution layer.
+  - [**RapidPVST:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/01_Redundancy_HA/RapidPVST.md) Rapid Per Vlan Spanning Tree tuning to prevent loops while maintaining redundant paths.
 
 **Routing & Switching:**
- - **VLANs:** Segmentation of Voice, Data, Management, and Server traffic.
- - **Inter-VLAN Routing:** Configured on Multilayer Switches.
- - **Dynamic Routing (OSPF):** Implemented for automatic route exchange between the Core, Distribution and Edge Router.
+ - [**VLANs:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/02_Routing_Switching/VLANs.md) Segmentation of Voice, Data, Management, and Server traffic.
+ - [**Inter-VLAN Routing:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/02_Routing_Switching/Inter-VLAN%20Routing.md) Configured on Multilayer Switches.
+ - [**Dynamic Routing (OSPF):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/02_Routing_Switching/Dynamic%20Routing%20(OSPF).md) Implemented for automatic route exchange between the Core, Distribution and Edge Router.
 
 **Wireless:**
  - Lightweight Access Points (LWAP) managed by a Wireless LAN Controller (WLC 3504).
