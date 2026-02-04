@@ -51,7 +51,7 @@ To verify the HSRP state and ensure the correct switch is acting as the Gateway,
 
 **Output (Example from DSW-A1):**
 
-<img width="959" height="224" alt="image" src="https://github.com/user-attachments/assets/12c0da9c-9105-4682-81f5-893ad2a4d174" />
+<img width="970" height="219" alt="image" src="https://github.com/user-attachments/assets/8cb7f9cd-63cb-4292-9014-3b9681695c79" />
 
 
 * Active: Indicates this switch is currently routing traffic for the VLAN.
