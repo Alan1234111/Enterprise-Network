@@ -28,7 +28,10 @@ The network is designed for redundancy, performance, and security, utilizing Lay
  - [**Dynamic Routing (OSPF):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/02_Routing_Switching/Dynamic%20Routing%20(OSPF).md) Implemented for automatic route exchange between the Core, Distribution and Edge Router.
 
 **Wireless:**
- - **[Centralized Wireless (WLC)](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/03_Wireless/Wireless.md):** Lightweight Access Points (LWAP) managed by a Wireless LAN Controller (WLC 3504).
+ - **[Centralized Wireless (WLC):](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/03_Wireless/Wireless.md)** Lightweight Access Points (LWAP) managed by a Wireless LAN Controller (WLC 3504).
+
+**Security:**
+- [**L2 Security:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/04_Security/L2_Security.md) Implementation of Port Security, DHCP Snooping, DAI, and BPDU Guard to mitigate LAN attacks.
 
 **Services:**
 - Full server stack implementation: FTP, DHCP, Syslog, Email, Web, TFTP, and NTP.
