@@ -32,6 +32,7 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 
 **Security:**
 - [**L2 Security:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/04_Security/L2_Security.md) Implementation of Port Security, DHCP Snooping, DAI, and BPDU Guard to mitigate LAN attacks.
+- [**L3 Filtering (ACLs):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/04_Security/L3_Security.md) Configured for traffic filtering, department segmentation, and securing management access.
 
 **Services:**
 - Full server stack implementation: FTP, DHCP, Syslog, Email, Web, TFTP, and NTP.
