@@ -8,7 +8,8 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 
 ## Topology
 
-<img width="2658" height="1528" alt="image" src="https://github.com/user-attachments/assets/8a550cff-b019-4813-af01-7ded06230fba" />
+<img width="2575" height="1477" alt="image" src="https://github.com/user-attachments/assets/279f2c31-3e57-4578-b566-cf3ca3764966" />
+
 
 ---
 
@@ -35,8 +36,7 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 - [**L3 Filtering (ACLs):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/04_Security/L3_Security.md) Configured for traffic filtering, department segmentation, and securing management access.
 
 **Services:**
-- Full server stack implementation: FTP, DHCP, Syslog, Email, Web, TFTP, and NTP.
-- NAT/PAT configured on the Edge Router for Internet access.
+- [**Network & Server Services:**](https://github.com/Alan1234111/Enterprise-Network/blob/main/documentation/05_Servicies/Network_Services.md) Full implementation of a server stack including FTP, DHCP, Syslog, Email, Web, TFTP, and NTP, along with NAT/PAT configuration on the Edge Router.
 
 ## Hardware & Bill of Materials
 **Core & WAN Layer:**
