@@ -11,10 +11,19 @@ The network is designed for redundancy, performance, and security, utilizing Lay
 <img width="2575" height="1477" alt="image" src="https://github.com/user-attachments/assets/279f2c31-3e57-4578-b566-cf3ca3764966" />
 
 
-### 📊 IP Addressing & Connection Matrix
-For a comprehensive breakdown of VLAN subnets, device management IPs, and port-to-port physical connections, please refer to the attached documentation:
-- [**IP Addressing & Connection Matrix (Excel):**](https://github.com/Alan1234111/Enterprise-Network/blob/main/Connections%20%26%20IPV4.xlsx)
+### 🔐 Device Access (Lab Credentials)
 
+* **Console / VTY Username:** `alan`
+* **Console / VTY Password:** `ccnalab`
+* **Enable Secret (Privileged EXEC):** `ccnalab`
+
+### 📂 Project Files & Downloads
+
+To explore the configuration, verify the security policies, and test the network yourself, you can access the core project files below:
+
+* ⚙️ **[Cisco Packet Tracer Simulation (.pkt)](Enterprise_Network.pkt):** The complete, fully functional network topology.
+* 📜 **[Device Configurations (startup-config)](configs/):** A directory containing the raw text configurations (`show run`) for all routers and switches.
+* 📊 **[IP Addressing & Connection Matrix (.xlsx)](https://github.com/Alan1234111/Enterprise-Network/blob/main/Connections%20%26%20IPV4.xlsx):** Complete breakdown of IPv4 subnets, VLAN assignments, and physical interface connections.
 
 ---
 
