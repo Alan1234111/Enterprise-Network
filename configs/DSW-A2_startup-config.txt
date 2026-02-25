@@ -1,0 +1,303 @@
+!
+version 16.3.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname DSW-A2
+!
+!
+no profinet
+!
+!
+!
+clock timezone CET 1
+!
+!
+!
+!
+no ip cef
+ip routing
+!
+no ipv6 cef
+!
+!
+!
+username alan secret 5 $1$mERr$QFE3fi72KCL6mLwTly5dF0
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip ssh version 1
+ip domain-name alancompany
+!
+!
+vtp mode transparent
+!
+spanning-tree mode rapid-pvst
+spanning-tree vlan 50,99-100 priority 0
+spanning-tree vlan 10,20 priority 4096
+!
+!
+!
+!
+!
+!
+vlan 10
+ name HR_DEPT
+!
+vlan 20
+ name IT_DEPT
+!
+vlan 50
+ name WIFI
+!
+vlan 99
+ name MANAGEMENT
+!
+vlan 100
+ name VOICE
+!
+interface Loopback0
+ ip address 10.0.0.112 255.255.255.255
+!
+interface Port-channel1
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet1/0/1
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet1/0/2
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet1/0/3
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet1/0/4
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+ channel-protocol lacp
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/5
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 10,20,50,99-100
+ switchport mode trunk
+ switchport nonegotiate
+ channel-protocol lacp
+ channel-group 1 mode active
+!
+interface GigabitEthernet1/0/6
+ shutdown
+!
+interface GigabitEthernet1/0/7
+ shutdown
+!
+interface GigabitEthernet1/0/8
+ shutdown
+!
+interface GigabitEthernet1/0/9
+ shutdown
+!
+interface GigabitEthernet1/0/10
+ shutdown
+!
+interface GigabitEthernet1/0/11
+ shutdown
+!
+interface GigabitEthernet1/0/12
+ shutdown
+!
+interface GigabitEthernet1/0/13
+ shutdown
+!
+interface GigabitEthernet1/0/14
+ shutdown
+!
+interface GigabitEthernet1/0/15
+ shutdown
+!
+interface GigabitEthernet1/0/16
+ shutdown
+!
+interface GigabitEthernet1/0/17
+ shutdown
+!
+interface GigabitEthernet1/0/18
+ shutdown
+!
+interface GigabitEthernet1/0/19
+ shutdown
+!
+interface GigabitEthernet1/0/20
+ shutdown
+!
+interface GigabitEthernet1/0/21
+ shutdown
+!
+interface GigabitEthernet1/0/22
+ shutdown
+!
+interface GigabitEthernet1/0/23
+ shutdown
+!
+interface GigabitEthernet1/0/24
+ shutdown
+!
+interface GigabitEthernet1/1/1
+ no switchport
+ ip address 10.0.0.66 255.255.255.252
+ ip ospf network point-to-point
+ ip ospf priority 1
+!
+interface GigabitEthernet1/1/2
+ no switchport
+ ip address 10.0.0.82 255.255.255.252
+ ip ospf network point-to-point
+ ip ospf priority 1
+!
+interface GigabitEthernet1/1/3
+ shutdown
+!
+interface GigabitEthernet1/1/4
+ shutdown
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ mac-address 0006.2a3d.aa01
+ ip address 10.0.10.3 255.255.255.0
+ ip helper-address 10.0.70.6
+ standby version 2
+ standby 1 ip 10.0.10.1
+ standby 1 preempt
+ standby 10 preempt
+!
+interface Vlan20
+ mac-address 0006.2a3d.aa02
+ ip address 10.0.20.3 255.255.255.0
+ ip helper-address 10.0.70.6
+ standby version 2
+ standby 1 ip 10.0.20.1
+ standby 1 preempt
+ standby 20 preempt
+!
+interface Vlan50
+ mac-address 0006.2a3d.aa03
+ ip address 10.0.50.3 255.255.255.0
+ ip helper-address 10.0.70.6
+ standby version 2
+ standby 1 ip 10.0.50.1
+ standby 1 priority 105
+ standby 1 preempt
+ standby 50 preempt
+!
+interface Vlan99
+ mac-address 0006.2a3d.aa04
+ ip address 10.0.0.3 255.255.255.240
+ ip helper-address 10.0.70.6
+ standby version 2
+ standby 1 ip 10.0.0.1
+ standby 1 preempt
+ standby 99 preempt
+!
+interface Vlan100
+ mac-address 0006.2a3d.aa05
+ ip address 10.0.100.3 255.255.255.0
+ ip helper-address 10.0.70.6
+ standby version 2
+ standby 1 ip 10.0.100.1
+ standby 1 priority 105
+ standby 1 preempt
+ standby 100 preempt
+!
+router ospf 1
+ log-adjacency-changes
+ passive-interface Loopback0
+ passive-interface Vlan10
+ passive-interface Vlan20
+ passive-interface Vlan50
+ passive-interface Vlan100
+ auto-cost reference-bandwidth 1000000
+ network 10.0.0.0 0.0.0.255 area 0
+ network 10.0.10.0 0.0.0.255 area 10
+ network 10.0.20.0 0.0.0.255 area 10
+ network 10.0.100.0 0.0.0.255 area 10
+ network 10.0.50.0 0.0.0.255 area 10
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+access-list 10 permit 10.0.20.0 0.0.0.255
+access-list 10 deny any
+ip access-list extended HR_ACL
+ deny ip 10.0.10.0 0.0.0.255 10.0.30.0 0.0.0.255
+ permit tcp 10.0.10.0 0.0.0.255 host 10.0.60.4 eq www
+ permit tcp 10.0.10.0 0.0.0.255 host 10.0.60.4 eq 443
+ permit tcp 10.0.10.0 0.0.0.255 host 10.0.60.5 eq smtp
+ permit tcp 10.0.10.0 0.0.0.255 host 10.0.60.5 eq pop3
+ permit udp 10.0.10.0 0.0.0.255 host 10.0.70.7 eq 123
+ deny udp 10.0.10.0 0.0.0.255 host 10.0.70.5
+ deny udp 10.0.10.0 0.0.0.255 host 10.0.70.8
+ deny tcp 10.0.10.0 0.0.0.255 host 10.0.70.4
+ permit ip any any
+ip access-list extended IT_ACL
+ permit ip 10.0.20.0 0.0.0.255 10.0.60.0 0.0.0.255
+ permit ip 10.0.20.0 0.0.0.255 10.0.70.0 0.0.0.255
+ permit tcp 10.0.20.0 0.0.0.255 10.0.0.0 0.0.0.255 eq 22
+ permit ip 10.0.20.0 0.0.0.255 10.0.10.0 0.0.0.255
+ permit ip 10.0.20.0 0.0.0.255 10.0.20.0 0.0.0.255
+ permit ip 10.0.20.0 0.0.0.255 10.0.30.0 0.0.0.255
+ permit ip 10.0.20.0 0.0.0.255 10.0.40.0 0.0.0.255
+ permit ip any any
+!
+!
+!
+!
+!
+logging 10.0.70.8
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ access-class 10 in
+ logging synchronous
+ login local
+ transport input ssh
+line vty 5 15
+ access-class 10 in
+ logging synchronous
+ login local
+ transport input ssh
+!
+!
+!
+ntp server 10.0.70.7
+!
+end
+

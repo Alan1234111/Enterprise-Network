@@ -1,0 +1,181 @@
+!
+version 15.0
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname ASW-S2
+!
+!
+!
+clock timezone CET 1
+!
+ip ssh version 1
+ip domain-name alancompany
+!
+username alan secret 5 $1$mERr$QFE3fi72KCL6mLwTly5dF0
+!
+vtp mode transparent
+!
+!
+no ip dhcp snooping information option
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan 60
+ name SRV_PUB
+!
+vlan 70
+ name SRV_INT
+!
+vlan 99
+ name MANAGEMENT
+!
+interface FastEthernet0/1
+ switchport access vlan 70
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0090.2102.9E84
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/2
+ switchport access vlan 60
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 00E0.8F92.A7EA
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/3
+ switchport access vlan 70
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 000A.F354.EEBA
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/4
+ switchport access vlan 70
+ switchport mode access
+ switchport port-security
+ switchport port-security mac-address sticky 
+ switchport port-security violation restrict 
+ switchport port-security mac-address sticky 0007.ECA6.BD81
+ spanning-tree portfast
+ spanning-tree bpduguard enable
+!
+interface FastEthernet0/5
+ shutdown
+!
+interface FastEthernet0/6
+ shutdown
+!
+interface FastEthernet0/7
+ shutdown
+!
+interface FastEthernet0/8
+ shutdown
+!
+interface FastEthernet0/9
+ shutdown
+!
+interface FastEthernet0/10
+ shutdown
+!
+interface FastEthernet0/11
+ shutdown
+!
+interface FastEthernet0/12
+ shutdown
+!
+interface FastEthernet0/13
+ shutdown
+!
+interface FastEthernet0/14
+ shutdown
+!
+interface FastEthernet0/15
+ shutdown
+!
+interface FastEthernet0/16
+ shutdown
+!
+interface FastEthernet0/17
+ shutdown
+!
+interface FastEthernet0/18
+ shutdown
+!
+interface FastEthernet0/19
+ shutdown
+!
+interface FastEthernet0/20
+ shutdown
+!
+interface FastEthernet0/21
+ shutdown
+!
+interface FastEthernet0/22
+ shutdown
+!
+interface FastEthernet0/23
+ shutdown
+!
+interface FastEthernet0/24
+ shutdown
+!
+interface GigabitEthernet0/1
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 60,70,99
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface GigabitEthernet0/2
+ switchport trunk native vlan 1000
+ switchport trunk allowed vlan 60,70,99
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan99
+ ip address 10.0.0.37 255.255.255.240
+!
+ip default-gateway 10.0.0.33
+!
+logging 10.0.70.8
+!
+!
+!
+access-list 10 permit 10.0.20.0 0.0.0.255
+access-list 10 deny any
+line con 0
+ login local
+!
+line vty 0 4
+ access-class 10 in
+ logging synchronous
+ login local
+ transport input ssh
+line vty 5 15
+ access-class 10 in
+ logging synchronous
+ login local
+ transport input ssh
+!
+!
+!
+ntp server 10.0.70.7
+!
+end
+
