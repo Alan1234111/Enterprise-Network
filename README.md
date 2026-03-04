@@ -23,7 +23,7 @@ To explore the configuration, verify the security policies, and test the network
 
 * ⚙️ **[Cisco Packet Tracer Simulation (.pkt)](Enterprise_Network.pkt):** The complete, fully functional network topology.
 * 📜 **[Device Configurations (startup-config)](configs/):** A directory containing the raw text configurations (`show run`) for all routers and switches.
-* 🛠️ **[Provisioning Scripts (.config)](Provisioning_Scripts/):** A directory containing the exact CLI command scripts used to build and provision the network from scratch.
+* 🛠️ **[Provisioning Scripts (.config)](provisioning_scripts/):** A directory containing the exact CLI command scripts used to build and provision the network from scratch.
 * 📊 **[IP Addressing & Connection Matrix (.xlsx)](https://github.com/Alan1234111/Enterprise-Network/blob/main/Connections%20%26%20IPV4.xlsx):** Complete breakdown of IPv4 subnets, VLAN assignments, and physical interface connections.
 
 ---
